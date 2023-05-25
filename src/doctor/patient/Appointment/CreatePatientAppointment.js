@@ -123,7 +123,7 @@ const CreatePatientAppointment = () => {
   }
   const getData = (data) => {
     //console.log(data);
-    return fetch(`http://localhost:5000/api/v1/payments/payment`, {
+    return fetch(`https://doctor-consulting-app-backend.onrender.com/api/v1/payments/payment`, {
       method: "POST",
       headers: {
         Accept: "application/json",

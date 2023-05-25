@@ -96,7 +96,7 @@ const CreateAppointment = () => {
   }
   const getData = (data) => {
 
-    return fetch(`https://single-doctor-app.herokuapp.com/api/v1/payments/paymentByDoctor`, {
+    return fetch(`https://doctor-consulting-app-backend.onrender.com/api/v1/payments/paymentByDoctor`, {
       method: "POST",
       headers: {
         Accept: "application/json",

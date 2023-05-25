@@ -6,7 +6,7 @@ export const userEnquiry = (userData) => async (dispatch) => {
       type: "EnquiryRequest",
     });
     const { data } = await axios.post(
-      "/api/v1/enquiry",
+      "https://doctor-consulting-app-backend.onrender.com/api/v1/enquiry",
       { ...userData },
       {
         headers: {
@@ -34,7 +34,7 @@ export const getDoctorMonSlotByDate = (monDayValue) => async (dispatch) => {
       type: "getMondaySlotRequest",
     });
     const { data } = await axios.post(
-      "/api/v1/get-mon-slot",
+      "https://doctor-consulting-app-backend.onrender.com/api/v1/get-mon-slot",
       { ...monDayValue },
       {
         headers: {
@@ -59,7 +59,7 @@ export const getDoctorTueSlotByDate = (monDayValue) => async (dispatch) => {
       type: "getTuesdaySlotRequest",
     });
     const { data } = await axios.post(
-      "/api/v1/get-mon-slot",
+      "https://doctor-consulting-app-backend.onrender.com/api/v1/get-mon-slot",
       { ...monDayValue },
       {
         headers: {
@@ -87,7 +87,7 @@ export const registerUser =
         type: "RegisterRequest",
       });
       const { data } = await axios.post(
-        "/api/v1/register",
+        "https://doctor-consulting-app-backend.onrender.com/api/v1/register",
         {
           name,
           email,
@@ -124,7 +124,7 @@ export const loginUser = (email, password, role) => async (dispatch) => {
       type: "LoginRequest",
     });
     const { data } = await axios.post(
-      "/api/v1/login",
+      "https://doctor-consulting-app-backend.onrender.com/api/v1/login",
       { email, password, role },
       {
         headers: {
@@ -152,7 +152,7 @@ export const loadUser = () => async (dispatch) => {
       type: "LoadUserRequest",
     });
 
-    const { data } = await axios.get("/api/v1/me", {
+    const { data } = await axios.get("https://doctor-consulting-app-backend.onrender.com/api/v1/me", {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -179,7 +179,7 @@ export const forgetPassword = (value) => async (dispatch) => {
       type: "ForgetPasswordRequest",
     });
     const { data } = await axios.post(
-      "/api/v1/forget/password",
+      "https://doctor-consulting-app-backend.onrender.com/api/v1/forget/password",
       { email },
       {
         headers: {
@@ -208,7 +208,7 @@ export const updatePassword =
         type: "updatePasswordRequest",
       });
       const { data } = await axios.put(
-        "/api/v1/update/password",
+        "https://doctor-consulting-app-backend.onrender.com/api/v1/update/password",
         { oldPassword, newPassword },
         {
           headers: {
@@ -236,7 +236,7 @@ export const updateCredentail =
         type: "updateCredentialRequest",
       });
       const { data } = await axios.put(
-        "/api/v1/update/credential",
+        "https://doctor-consulting-app-backend.onrender.com/api/v1/update/credential",
         { marchantId, marchantKey },
         {
           headers: {
@@ -266,7 +266,7 @@ export const resetPassword = (otp) => async (dispatch) => {
       type: "SetPasswordRequest",
     });
     const { data } = await axios.post(
-      "/api/v1/otp/validate",
+      "https://doctor-consulting-app-backend.onrender.com/api/v1/otp/validate",
       { otp },
       {
         headers: {
@@ -295,7 +295,7 @@ export const setPassword = (patientId, password) => async (dispatch) => {
       type: "ResetPasswordRequest",
     });
     const { data } = await axios.put(
-      `/api/v1/password/reset/${patientId}`,
+      `https://doctor-consulting-app-backend.onrender.com/api/v1/password/reset/${patientId}`,
       { password },
       {
         headers: {
@@ -335,7 +335,7 @@ export const updateDoctorProfile =
         type: "UpdateDoctorRequest",
       });
       const { data } = await axios.put(
-        "/api/v1/doctor/update",
+        "https://doctor-consulting-app-backend.onrender.com/api/v1/doctor/update",
         {
           name,
           academic,
@@ -375,7 +375,7 @@ export const updateDoctorFee = (fee) => async (dispatch) => {
       type: "UpdateDoctorFeeRequest",
     });
     const { data } = await axios.put(
-      "/api/v1/doctor/updateFee",
+      "https://doctor-consulting-app-backend.onrender.com/api/v1/doctor/updateFee",
       { fee },
       {
         headers: {
@@ -405,7 +405,7 @@ export const updateDoctorEmailTemplate =
         type: "UpdateDoctorEmailTemplateRequest",
       });
       const { data } = await axios.put(
-        "/api/v1/doctor/updateemailtemplate",
+        "https://doctor-consulting-app-backend.onrender.com/api/v1/doctor/updateemailtemplate",
         { email_template },
         {
           headers: {
@@ -435,7 +435,7 @@ export const updateDoctorLanguage = (videoUrl, langArr) => async (dispatch) => {
       type: "UpdateDoctorLanguageRequest",
     });
     const { data } = await axios.put(
-      "/api/v1/doctor/language",
+      "https://doctor-consulting-app-backend.onrender.com/api/v1/doctor/language",
       { videoUrl, langArr },
       {
         headers: {
@@ -464,7 +464,7 @@ export const updateDoctorExperience = (expValue) => async (dispatch) => {
       type: "UpdateDoctorExperienceRequest",
     });
     const { data } = await axios.put(
-      "/api/v1/doctor/experience",
+      "https://doctor-consulting-app-backend.onrender.com/api/v1/doctor/experience",
       { expValue },
       {
         headers: {
@@ -494,7 +494,7 @@ export const updateClinicAwards =
         type: "UpdateDoctorClinicAwardRequest",
       });
       const { data } = await axios.post(
-        "/api/v1/doctor/awardclinic",
+        "https://doctor-consulting-app-backend.onrender.com/api/v1/doctor/awardclinic",
         { clinicAddr, docterAcademic, doctorAward },
         {
           headers: {
@@ -523,7 +523,7 @@ export const doctorDetailById = (userId) => async (dispatch) => {
     dispatch({
       type: "GetUsersDetailsRequest",
     });
-    const { data } = await axios.get(`/api/v1/doctor-details/${userId}`, {
+    const { data } = await axios.get(`https://doctor-consulting-app-backend.onrender.com/api/v1/doctor-details/${userId}`, {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -547,7 +547,7 @@ export const getPaymentDetails = (orderId) => async (dispatch) => {
     dispatch({
       type: "GetUsersPaymentRequest",
     });
-    const { data } = await axios.get(`/api/v1/payment-details/${orderId}`, {
+    const { data } = await axios.get(`https://doctor-consulting-app-backend.onrender.com/api/v1/payment-details/${orderId}`, {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -571,7 +571,7 @@ export const getPaymentDetails = (orderId) => async (dispatch) => {
 //       type: "getPaytmPaymentRequest",
 //     });
 //     const { data } = await axios.post(
-//       "/api/v1/paytm",
+//       "https://doctor-consulting-app-backend.onrender.com/api/v1/paytm",
 //       { amount, email},
 //       {
 //         headers: {
@@ -600,7 +600,7 @@ export const createPatient = (userValue) => async (dispatch) => {
       type: "CreatePatientRequest",
     });
     const { data } = await axios.post(
-      "/api/v1/patient/create",
+      "https://doctor-consulting-app-backend.onrender.com/api/v1/patient/create",
       { ...userValue },
       {
         headers: {
@@ -630,7 +630,7 @@ export const updatePatient =
         type: "UpdatePatientRequest",
       });
       const { data } = await axios.post(
-        "/api/v1/patient/update",
+        "https://doctor-consulting-app-backend.onrender.com/api/v1/patient/update",
         { userValue, patientId, profileImage },
         {
           headers: {
@@ -658,7 +658,7 @@ export const getBlogDetails = (newsId) => async (dispatch) => {
     dispatch({
       type: "GetBlogDetailsRequest",
     });
-    const { data } = await axios.get(`/api/v1/blog-details/${newsId}`, {
+    const { data } = await axios.get(`https://doctor-consulting-app-backend.onrender.com/api/v1/blog-details/${newsId}`, {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -683,7 +683,7 @@ export const getDoctorSlotById = (selectedDate,doctorId) => async (dispatch) => 
       type: "GetDoctorSlotsByIdRequest",
     });
     const { data } = await axios.post(
-      `/api/v1/get-all-slot`,
+      `https://doctor-consulting-app-backend.onrender.com/api/v1/get-all-slot`,
       { selectedDate, doctorId: doctorId },
       {
         headers: {
@@ -713,7 +713,7 @@ export const getPatient = () => async (dispatch) => {
     dispatch({
       type: "GetPatientRequest",
     });
-    const { data } = await axios.get("/api/v1/patient", {
+    const { data } = await axios.get("https://doctor-consulting-app-backend.onrender.com/api/v1/patient", {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -737,7 +737,7 @@ export const createDrug = (drugValue) => async (dispatch) => {
       type: "CreateDrugRequest",
     });
     const { data } = await axios.post(
-      "/api/v1/create-drug",
+      "https://doctor-consulting-app-backend.onrender.com/api/v1/create-drug",
       { ...drugValue },
       {
         headers: {
@@ -765,7 +765,7 @@ export const getDrug = () => async (dispatch) => {
     dispatch({
       type: "GetDrugsRequest",
     });
-    const { data } = await axios.get("/api/v1/drugs", {
+    const { data } = await axios.get("https://doctor-consulting-app-backend.onrender.com/api/v1/drugs", {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -789,7 +789,7 @@ export const updateDrug = (drugId, drugValue) => async (dispatch) => {
       type: "UpdateDrugRequest",
     });
     const { data } = await axios.put(
-      `/api/v1/update-drug/${drugId}`,
+      `https://doctor-consulting-app-backend.onrender.com/api/v1/update-drug/${drugId}`,
       { ...drugValue },
       {
         headers: {
@@ -817,7 +817,7 @@ export const editDrug = (drugId) => async (dispatch) => {
     dispatch({
       type: "EditDrugRequest",
     });
-    const { data } = await axios.get(`/api/v1/edit-drug/${drugId}`, {
+    const { data } = await axios.get(`https://doctor-consulting-app-backend.onrender.com/api/v1/edit-drug/${drugId}`, {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -839,7 +839,7 @@ export const deleteDrug = (drugId) => async (dispatch) => {
     dispatch({
       type: "DeleteDrugRequest",
     });
-    const { data } = await axios.delete(`/api/v1/delete-drug/${drugId}`, {
+    const { data } = await axios.delete(`https://doctor-consulting-app-backend.onrender.com/api/v1/delete-drug/${drugId}`, {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -864,7 +864,7 @@ export const createTest = (testValue) => async (dispatch) => {
       type: "CreateTestRequest",
     });
     const { data } = await axios.post(
-      "/api/v1/create-test",
+      "https://doctor-consulting-app-backend.onrender.com/api/v1/create-test",
       { ...testValue },
       {
         headers: {
@@ -893,7 +893,7 @@ export const updateTest = (testId, testValue) => async (dispatch) => {
       type: "UpdateTestRequest",
     });
     const { data } = await axios.put(
-      `/api/v1/update-test/${testId}`,
+      `https://doctor-consulting-app-backend.onrender.com/api/v1/update-test/${testId}`,
       { ...testValue },
       {
         headers: {
@@ -921,7 +921,7 @@ export const getTests = () => async (dispatch) => {
     dispatch({
       type: "GetTestsRequest",
     });
-    const { data } = await axios.get("/api/v1/tests", {
+    const { data } = await axios.get("https://doctor-consulting-app-backend.onrender.com/api/v1/tests", {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -944,7 +944,7 @@ export const editTest = (testId) => async (dispatch) => {
     dispatch({
       type: "EditTestRequest",
     });
-    const { data } = await axios.get(`/api/v1/edit-test/${testId}`, {
+    const { data } = await axios.get(`https://doctor-consulting-app-backend.onrender.com/api/v1/edit-test/${testId}`, {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -967,7 +967,7 @@ export const deleteTest = (testId) => async (dispatch) => {
     dispatch({
       type: "DeleteTestRequest",
     });
-    const { data } = await axios.delete(`/api/v1/delete-test/${testId}`, {
+    const { data } = await axios.delete(`https://doctor-consulting-app-backend.onrender.com/api/v1/delete-test/${testId}`, {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -993,7 +993,7 @@ export const createPrescription =
         type: "createPrescriptionRequest",
       });
       const { data } = await axios.post(
-        "/api/v1/create-prescription",
+        "https://doctor-consulting-app-backend.onrender.com/api/v1/create-prescription",
         { selectPatient, drugValue, testValue },
         {
           headers: {
@@ -1021,7 +1021,7 @@ export const getPrescription = () => async (dispatch) => {
     dispatch({
       type: "GetPrescriptionRequest",
     });
-    const { data } = await axios.get("/api/v1/prescriptions", {
+    const { data } = await axios.get("https://doctor-consulting-app-backend.onrender.com/api/v1/prescriptions", {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -1045,7 +1045,7 @@ export const deletePrescription = (presId) => async (dispatch) => {
       type: "DeletePrescriptionRequest",
     });
     const { data } = await axios.delete(
-      `/api/v1/delete-prescription/${presId}`,
+      `https://doctor-consulting-app-backend.onrender.com/api/v1/delete-prescription/${presId}`,
       {
         headers: {
           "auth-token": localStorage.getItem("token"),
@@ -1071,7 +1071,7 @@ export const editPrescription = (presId) => async (dispatch) => {
     dispatch({
       type: "EditPrescriptionRequest",
     });
-    const { data } = await axios.get(`/api/v1/edit-prescription/${presId}`, {
+    const { data } = await axios.get(`https://doctor-consulting-app-backend.onrender.com/api/v1/edit-prescription/${presId}`, {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -1094,7 +1094,7 @@ export const getAllPrescriptionDetails = (patientId) => async (dispatch) => {
       type: "GetAllPrescriptionRequest",
     });
     const { data } = await axios.get(
-      `/api/v1/get-all-prescription/${patientId}`,
+      `https://doctor-consulting-app-backend.onrender.com/api/v1/get-all-prescription/${patientId}`,
       {
         headers: {
           "auth-token": localStorage.getItem("token"),
@@ -1122,7 +1122,7 @@ export const updatePrescription =
         type: "UpdatePrescriptionRequest",
       });
       const { data } = await axios.put(
-        `/api/v1/update-prescription/${presId}`,
+        `https://doctor-consulting-app-backend.onrender.com/api/v1/update-prescription/${presId}`,
         { selectPatient, drugValue, testValue },
         {
           headers: {
@@ -1177,7 +1177,7 @@ export const createSlots =
         type: "CreateSlotRequest",
       });
       const { data } = await axios.post(
-        "/api/v1/create-slots",
+        "https://doctor-consulting-app-backend.onrender.com/api/v1/create-slots",
         { manageSlots, slotValue, fieldValue },
         {
           headers: {
@@ -1205,7 +1205,7 @@ export const getSlots = () => async (dispatch) => {
     dispatch({
       type: "GetSlotsRequest",
     });
-    const { data } = await axios.get("/api/v1/all-slots", {
+    const { data } = await axios.get("https://doctor-consulting-app-backend.onrender.com/api/v1/all-slots", {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -1228,7 +1228,7 @@ export const editSlot = (slotId) => async (dispatch) => {
     dispatch({
       type: "EditSlotRequest",
     });
-    const { data } = await axios.get(`/api/v1/edit-slot/${slotId}`, {
+    const { data } = await axios.get(`https://doctor-consulting-app-backend.onrender.com/api/v1/edit-slot/${slotId}`, {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -1253,7 +1253,7 @@ export const updateSlot =
         type: "UpdateSlotRequest",
       });
       const { data } = await axios.put(
-        `/api/v1/update-slot/${slotId}`,
+        `https://doctor-consulting-app-backend.onrender.com/api/v1/update-slot/${slotId}`,
         { manageSlots, slotValue, fieldValue },
         {
           headers: {
@@ -1281,7 +1281,7 @@ export const deleteSlot = (slotId) => async (dispatch) => {
     dispatch({
       type: "DeleteSlotRequest",
     });
-    const { data } = await axios.delete(`/api/v1/delete-slot/${slotId}`, {
+    const { data } = await axios.delete(`https://doctor-consulting-app-backend.onrender.com/api/v1/delete-slot/${slotId}`, {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -1305,7 +1305,7 @@ export const getSlotByDate = (selectedDate, doctorId) => async (dispatch) => {
       type: "DateWiseSlotRequest",
     });
     const { data } = await axios.post(
-      `/api/v1/my-slot`,
+      `https://doctor-consulting-app-backend.onrender.com/api/v1/my-slot`,
       { selectedDate, doctorId: doctorId },
       {
         headers: {
@@ -1334,7 +1334,7 @@ export const createDoctorAppointment =
         type: "CreateAppointmentRequest",
       });
       const { data } = await axios.post(
-        "/api/v1/create-appointment",
+        "https://doctor-consulting-app-backend.onrender.com/api/v1/create-appointment",
         { formData, patientDetail },
         {
           headers: {
@@ -1361,7 +1361,7 @@ export const getDoctorAppointments = () => async (dispatch) => {
     dispatch({
       type: "GetDoctorAppointmentsRequest",
     });
-    const { data } = await axios.get("/api/v1/doctor-appointments", {
+    const { data } = await axios.get("https://doctor-consulting-app-backend.onrender.com/api/v1/doctor-appointments", {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -1386,7 +1386,7 @@ export const getDoctorMonthlyEarning = (doctorId) => async (dispatch) => {
       type: "GetDoctorMonthlyEarningRequest",
     });
     const { data } = await axios.get(
-      `/api/v1/doctor-monthly-earning/${doctorId}`,
+      `https://doctor-consulting-app-backend.onrender.com/api/v1/doctor-monthly-earning/${doctorId}`,
       {
         headers: {
           "auth-token": localStorage.getItem("token"),
@@ -1414,7 +1414,7 @@ export const getPatientPayment = (patientId) => async (dispatch) => {
       type: "GetPatientPaymentRequest",
     });
     const { data } = await axios.get(
-      `/api/v1/patient-payment/${patientId}`,
+      `https://doctor-consulting-app-backend.onrender.com/api/v1/patient-payment/${patientId}`,
       {
         headers: {
           "auth-token": localStorage.getItem("token"),
@@ -1438,7 +1438,7 @@ export const getPatientPayment = (patientId) => async (dispatch) => {
 
 // export const getDoctorAppointments = () => async (dispatch) => {
 //   try {
-//       const { data } = await axios.get('/api/v1/doctor-appointments',{
+//       const { data } = await axios.get('https://doctor-consulting-app-backend.onrender.com/api/v1/doctor-appointments',{
 //               headers: {
 //                 "auth-token": localStorage.getItem("token"),
 //               }});
@@ -1455,7 +1455,7 @@ export const getTodaysDoctorAppointments = () => async (dispatch) => {
     dispatch({
       type: "GetTodayDoctorAppointmentsRequest",
     });
-    const { data } = await axios.get("/api/v1/today-doctor-appointments", {
+    const { data } = await axios.get("https://doctor-consulting-app-backend.onrender.com/api/v1/today-doctor-appointments", {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -1478,7 +1478,7 @@ export const getAppointmentDetailsById = (appId) => async (dispatch) => {
     dispatch({
       type: "AppointmentDetailsByIdRequest",
     });
-    const { data } = await axios.get(`/api/v1/appointment-detail/${appId}`, {
+    const { data } = await axios.get(`https://doctor-consulting-app-backend.onrender.com/api/v1/appointment-detail/${appId}`, {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -1501,7 +1501,7 @@ export const deleteAppointmentById = (appId) => async (dispatch) => {
     dispatch({
       type: "DeleteAppointmentRequest",
     });
-    const { data } = await axios.delete(`/api/v1/delete-appointment/${appId}`, {
+    const { data } = await axios.delete(`https://doctor-consulting-app-backend.onrender.com/api/v1/delete-appointment/${appId}`, {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -1526,7 +1526,7 @@ export const getDoctors = () => async (dispatch) => {
     dispatch({
       type: "GetDoctorsRequest",
     });
-    const { data } = await axios.get("/api/v1/patient/doctors", {
+    const { data } = await axios.get("https://doctor-consulting-app-backend.onrender.com/api/v1/patient/doctors", {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -1550,7 +1550,7 @@ export const getPatientAppointments = (patientId) => async (dispatch) => {
       type: "GetPatientAppointmentsRequest",
     });
     const { data } = await axios.get(
-      `/api/v1/patient/appointments/${patientId}`,
+      `https://doctor-consulting-app-backend.onrender.com/api/v1/patient/appointments/${patientId}`,
       {
         headers: {
           "auth-token": localStorage.getItem("token"),
@@ -1575,7 +1575,7 @@ export const getPatientUpcommingAppointments = () => async (dispatch) => {
     dispatch({
       type: "GetPatientUpcommingAppointmentsRequest",
     });
-    const { data } = await axios.get("/api/v1/patient/upcomming-appointments", {
+    const { data } = await axios.get("https://doctor-consulting-app-backend.onrender.com/api/v1/patient/upcomming-appointments", {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -1598,7 +1598,7 @@ export const getPatientCompletedAppointments = () => async (dispatch) => {
     dispatch({
       type: "GetPatientCompletedAppointmentsRequest",
     });
-    const { data } = await axios.get("/api/v1/patient/completed-appointments", {
+    const { data } = await axios.get("https://doctor-consulting-app-backend.onrender.com/api/v1/patient/completed-appointments", {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -1621,7 +1621,7 @@ export const getPatientPrescription = () => async (dispatch) => {
     dispatch({
       type: "GetPatientPrescriptionRequest",
     });
-    const { data } = await axios.get("/api/v1/patient/prescriptions", {
+    const { data } = await axios.get("https://doctor-consulting-app-backend.onrender.com/api/v1/patient/prescriptions", {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -1644,7 +1644,7 @@ export const getPatientPrescriptionDetails = (presId) => async (dispatch) => {
     dispatch({
       type: "GetPatientPrescriptionByIdRequest",
     });
-    const { data } = await axios.get(`/api/v1/patient/prescription/${presId}`, {
+    const { data } = await axios.get(`https://doctor-consulting-app-backend.onrender.com/api/v1/patient/prescription/${presId}`, {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -1668,7 +1668,7 @@ export const createReport = (formData, reportDocument) => async (dispatch) => {
       type: "CreateReportRequest",
     });
     const { data } = await axios.post(
-      "/api/v1/patient/create-report",
+      "https://doctor-consulting-app-backend.onrender.com/api/v1/patient/create-report",
       { formData, reportDocument },
       {
         headers: {
@@ -1695,7 +1695,7 @@ export const getPatientReports = () => async (dispatch) => {
     dispatch({
       type: "GetPatientReportRequest",
     });
-    const { data } = await axios.get("/api/v1/patient/reports", {
+    const { data } = await axios.get("https://doctor-consulting-app-backend.onrender.com/api/v1/patient/reports", {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -1719,7 +1719,7 @@ export const getPatientDashboard = (selectedDate) => async (dispatch) => {
       type: "GetPatientDashboardDataRequest",
     });
     const { data } = await axios.post(
-      "/api/v1/patient/dashboard",
+      "https://doctor-consulting-app-backend.onrender.com/api/v1/patient/dashboard",
       { selectedDate },
       {
         headers: {
@@ -1746,7 +1746,7 @@ export const getSearchDoctor = (key) => async (dispatch) => {
     dispatch({
       type: "GetSearchDoctorRequest",
     });
-    const { data } = await axios.get(`/api/v1/search/doctor/${key}`, {
+    const { data } = await axios.get(`https://doctor-consulting-app-backend.onrender.com/api/v1/search/doctor/${key}`, {
       headers: {
         "auth-token": localStorage.getItem("token"),
       },
@@ -1771,7 +1771,7 @@ export const submitTestReport = (formData) => async (dispatch) => {
       type: "SubmitTestReportRequest",
     });
     const { data } = await axios.post(
-      "/api/v1/patient/submit-report",
+      "https://doctor-consulting-app-backend.onrender.com/api/v1/patient/submit-report",
       { formData },
       {
         headers: {

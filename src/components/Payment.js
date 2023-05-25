@@ -48,7 +48,7 @@ const Payment = () => {
     });
   };
   const getData = (data) => {
-    return fetch(`https://xoniertest.herokuapp.com/api/v1/payments/payment`, {
+    return fetch(`https://doctor-consulting-app-backend.onrender.com/api/v1/payments/payment`, {
       method: "POST",
       headers: {
         Accept: "application/json",
